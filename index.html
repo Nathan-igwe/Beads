@@ -1,0 +1,355 @@
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Beads and Bracelets</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
+</head>
+<body>
+  <header>
+    <img src="ei_1750611365847-removebg-preview.png" alt="Beads and Bracelets Logo" class="logo">
+    <h1>Beads and Bracelets</h1>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#products">Products</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>  <section id="home" class="hero">
+    <h2>Handmade Beaded Creations</h2>
+    <p>Bracelets, Rings, Keychains, Bags & Phone Charms</p>
+  </section>  <section id="about">
+    <h2>About Us</h2>
+    <p>Welcome to Beads and Bracelets — your home for stylish, handcrafted bead products. Every piece is made with care, love, and creativity to brighten your everyday style.</p>
+  </section>  <section id="products">
+    <h2>Our Products</h2>
+    <div class="product-grid">
+      <div class="product-card" data-name="Bracelet" data-price="5">
+        <img src="71ew0iUoliL._AC_SY675_.jpg" alt="Bracelet">
+        <p>Bracelet - $5</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-name="Ring" data-price="3">
+        <img src="39c17e89a68e0e55bc7b7d4580ec3021.jpg" alt="Ring">
+        <p>Ring - $3</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-name="Keychain" data-price="4">
+        <img src="keychain.jpg" alt="Keychain">
+        <p>Keychain - $4</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-name="Bag" data-price="15">
+        <img src="bag.jpg" alt="Beaded Bag">
+        <p>Beaded Bag - $15</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+      <div class="product-card" data-name="Phone Charm" data-price="2">
+        <img src="phonecharm.jpg" alt="Phone Charm">
+        <p>Phone Charm - $2</p>
+        <button class="add-to-cart">Add to Cart</button>
+      </div>
+    </div><div class="cart">
+  <h3>Shopping Cart</h3>
+  <ul id="cart-items"></ul>
+  <p>Total: $<span id="cart-total">0</span></p>
+  <button id="clear-cart">Clear Cart</button>
+
+  <form action="https://formspree.io/f/YOUR_ID_HERE" method="POST" id="checkout-form">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="order" id="order-details" placeholder="Order details will appear here" readonly required></textarea>
+    <button type="submit">Checkout</button>
+  </form>
+</div>
+
+  </section>  <section id="contact">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/xpwrjkgd" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="email" name="email" placeholder="Your Email" required />
+      <textarea name="message" placeholder="Your Message" required></textarea>
+      <button type="submit">Send</button>
+    </form>
+  </section>  <footer>
+    <p>&copy; 2025 Beads and Bracelets. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+<!--style.css-->
+<style>
+  body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    background: #fff;
+    color: #333;
+  }
+
+  header {
+    background: #f0932b;
+    padding: 20px;
+    text-align: center;
+    color: white;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+  }
+
+  .logo {
+    width: 60px;
+    vertical-align: middle;
+  }
+
+  nav a {
+    margin: 0 10px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+  }
+
+  .hero {
+    background: #ffeaa7;
+    padding: 60px 20px;
+    text-align: center;
+  }
+
+  section {
+    padding: 40px 20px;
+    text-align: center;
+  }
+
+  .product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+  }
+
+  .product-card {
+    background: #f1f2f6;
+    padding: 15px;
+    width: 200px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+
+  .product-card img {
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  .add-to-cart {
+    margin-top: 10px;
+    padding: 8px;
+    background: #f0932b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  .add-to-cart:hover {
+    background: #e17055;
+  }
+
+  .cart {
+    margin-top: 30px;
+    background: #dff9fb;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  #cart-items li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 5px 0;
+    flex-wrap: wrap;
+  }
+
+  .cart-controls {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    margin-left: 10px;
+  }
+
+  .cart-controls button {
+    padding: 2px 6px;
+    background: #6c5ce7;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+  }
+
+  .remove-item {
+    background: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 2px 6px;
+    cursor: pointer;
+    font-size: 0.8em;
+  }
+
+  #clear-cart {
+    margin-top: 10px;
+    background: #d63031;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #checkout-form input,
+  #checkout-form textarea {
+    margin-top: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+  }
+
+  #checkout-form button[type="submit"] {
+    margin-top: 10px;
+    padding: 10px;
+    background: #0984e3;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  #checkout-form button:hover {
+    background: #74b9ff;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  input, textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+  }
+
+  button[type="submit"] {
+    padding: 10px;
+    background: #f0932b;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+
+  button[type="submit"]:hover {
+    background: #e17055;
+  }
+
+  footer {
+    background: #2d3436;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+  }
+</style>
+<!-- script.js -->
+
+<script>
+  const cartItems = document.getElementById('cart-items');
+  const cartTotal = document.getElementById('cart-total');
+  const clearCartBtn = document.getElementById('clear-cart');
+  const orderDetails = document.getElementById('order-details');
+  let cart = [];
+
+  function updateCartDisplay() {
+    cartItems.innerHTML = '';
+    let total = 0;
+    let orderText = '';
+
+    cart.forEach((item, index) => {
+      const li = document.createElement('li');
+      const itemTotal = item.price * item.quantity;
+      li.textContent = `${item.name} - $${item.price.toFixed(2)} x ${item.quantity} = $${itemTotal.toFixed(2)}`;
+
+      const controls = document.createElement('span');
+      controls.className = 'cart-controls';
+
+      const increaseBtn = document.createElement('button');
+      increaseBtn.textContent = '+';
+      increaseBtn.onclick = () => {
+        item.quantity++;
+        updateCartDisplay();
+      };
+
+      const decreaseBtn = document.createElement('button');
+      decreaseBtn.textContent = '-';
+      decreaseBtn.onclick = () => {
+        if (item.quantity > 1) {
+          item.quantity--;
+        } else {
+          cart.splice(index, 1);
+        }
+        updateCartDisplay();
+      };
+
+      const removeBtn = document.createElement('button');
+      removeBtn.textContent = 'x';
+      removeBtn.classList.add('remove-item');
+      removeBtn.onclick = () => {
+        cart.splice(index, 1);
+        updateCartDisplay();
+      };
+
+      controls.appendChild(increaseBtn);
+      controls.appendChild(decreaseBtn);
+      controls.appendChild(removeBtn);
+      li.appendChild(controls);
+
+      cartItems.appendChild(li);
+      total += itemTotal;
+      orderText += `${item.name} x ${item.quantity} = $${itemTotal.toFixed(2)}\n`;
+    });
+
+    cartTotal.textContent = total.toFixed(2);
+    if (orderDetails) {
+      orderDetails.value = `${orderText}\nTotal: $${total.toFixed(2)}`;
+    }
+  }
+
+  document.querySelectorAll('.add-to-cart').forEach(button => {
+    button.addEventListener('click', () => {
+      const product = button.parentElement;
+      const name = product.getAttribute('data-name');
+      const price = parseFloat(product.getAttribute('data-price'));
+      const existing = cart.find(item => item.name === name);
+
+      if (existing) {
+        existing.quantity++;
+      } else {
+        cart.push({ name, price, quantity: 1 });
+      }
+      updateCartDisplay();
+    });
+  });
+
+  clearCartBtn.addEventListener('click', () => {
+    cart = [];
+    updateCartDisplay();
+  });
+</script>
